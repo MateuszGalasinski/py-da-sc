@@ -1,1 +1,1 @@
-docker run --rm -it --user root -e NB_GID=100 -p 8888:8888 -v "$(pwd)/jupyter:/home/jovyan/host-note" jupyter/scipy-notebook:latest start-notebook.sh --NotebookApp.token='' --NotebookApp.allow_origin='*'
+docker run --rm -it -e NB_GID=100 -e GRANT_SUDO=yes -p 8887:8888 -v "$(pwd)/jupyter:/home/jovyan/host-note" jupyter/scipy-notebook:latest start-notebook.sh --NotebookApp.iopub_data_rate_limit=10000000000 --NotebookApp.token=''
